@@ -1,0 +1,10 @@
+# Node
+node_modules/
+
+# Mac
+.DS_Store
+
+# Google Cloud SDK
+server/google-cloud-sdk/
+server/*.tar.gz
+server/.env

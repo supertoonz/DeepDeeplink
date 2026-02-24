@@ -1,0 +1,22 @@
+apiVersion: skaffold/v4beta7
+kind: Config
+metadata:
+  name: deferred-deeplink-server
+build:
+  artifacts:
+    - image: 549918006255.dkr.ecr.ap-southeast-1.amazonaws.com/scb-ploy/deferred-deeplink-server
+      context: .
+      docker:
+        dockerfile: Dockerfile
+manifests:
+  rawYaml:
+    - k8s/*.yaml
+deploy:
+  kubectl: {}
+profiles:
+  - name: sandbox
+    manifests:
+      rawYaml:
+        - k8s/sandbox-deployment.yaml
+    deploy:
+      kubectl: {}
