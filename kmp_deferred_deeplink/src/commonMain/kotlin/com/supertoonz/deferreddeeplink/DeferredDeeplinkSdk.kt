@@ -21,8 +21,8 @@ private data class InstallResponse(
 )
 
 class DeferredDeeplinkSdk(
-    private val apiEndpoint: String,
-    private val platformHelper: PlatformHelper
+    private val platformHelper: PlatformHelper,
+    private val apiEndpoint: String = "https://deferred-deeplink-api-327503979782.us-central1.run.app/api/install"
 ) {
     private val client = HttpClient {
         install(ContentNegotiation) {
