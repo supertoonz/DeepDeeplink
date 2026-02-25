@@ -8,3 +8,11 @@ node_modules/
 server/google-cloud-sdk/
 server/*.tar.gz
 server/.env
+
+# Google Cloud CLI credentials
+server/google-cloud-sdk/.install/
+server/google-cloud-sdk/properties
+server/google-cloud-sdk/lib/
+server/google-cloud-sdk/bin/
+.config/gcloud/
+gcp-key.json
