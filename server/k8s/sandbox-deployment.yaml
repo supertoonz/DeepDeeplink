@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: deferred-deeplink-server
-        image: 549918006255.dkr.ecr.ap-southeast-1.amazonaws.com/scb-ploy/deferred-deeplink-server
+        image: us-central1-docker.pkg.dev/deferred-deeplink-demo/cloud-run-source-deploy/deferred-deeplink-server
         ports:
         - containerPort: 3000
 ---
