@@ -43,6 +43,18 @@ class DeferredDeeplinkSdk(
                 return null
             }
 
+            // 1. Try to fetch 100% accurate Deterministic parameters FIRST from the OS
+            val deterministicParams = platformHelper.fetchDeterministicParams()
+            if (deterministicParams != null && 
+                (deterministicParams.utmSource != null || deterministicParams.utmCampaign != null)) {
+                
+                println("[DeferredDeeplinkSdk] Deterministic match found!")
+                platformHelper.markAsChecked()
+                return deterministicParams
+            }
+
+            // 2. Fallback to probabilistic Fingerprint Backend Match
+            println("[DeferredDeeplinkSdk] No deterministic params, falling back to Fingerprint")
             val fingerprint = platformHelper.getDeviceFingerprint()
 
             val response: InstallResponse = client.post(apiEndpoint) {

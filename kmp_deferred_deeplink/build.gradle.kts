@@ -40,6 +40,7 @@ kotlin {
             dependencies {
                 implementation("io.ktor:ktor-client-android:2.3.8")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
+                implementation("com.android.installreferrer:installreferrer:2.2")
             }
         }
         val iosMain by creating {

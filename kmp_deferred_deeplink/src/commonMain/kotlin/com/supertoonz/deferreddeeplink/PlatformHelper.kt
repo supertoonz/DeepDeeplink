@@ -28,4 +28,11 @@ expect interface PlatformHelper {
      * Mark that we've successfully pinged the backend
      */
     fun markAsChecked()
+
+    /**
+     * Attempts to fetch deterministic parameters directly from the OS.
+     * Android: Google Play Install Referrer
+     * iOS: UIPasteboard (Legacy approach)
+     */
+    suspend fun fetchDeterministicParams(): DeferredInstallParameters?
 }
