@@ -16,3 +16,9 @@ server/google-cloud-sdk/lib/
 server/google-cloud-sdk/bin/
 .config/gcloud/
 gcp-key.json
+
+# Gradle and Build folders
+build/
+**/build/
+.gradle/
+local.properties
